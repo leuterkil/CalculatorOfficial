@@ -118,5 +118,26 @@ public class MainActivity extends AppCompatActivity {
                 crunchifyEditText.setText(crunchifyEditText.getText() + ".");
             }
         });
+
+        buttonMul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
+                crunchifyMultiplication = true;
+                crunchifyEditText.setText(null);
+            }
+        });
+
+        buttonEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mValueTwo = Float.parseFloat(crunchifyEditText.getText() + "");
+
+                if (crunchifyMultiplication == true) {
+                    crunchifyEditText.setText(mValueOne * mValueTwo + "");
+                    crunchifyMultiplication = false;
+                }
+            }
+        });
     }
 }
