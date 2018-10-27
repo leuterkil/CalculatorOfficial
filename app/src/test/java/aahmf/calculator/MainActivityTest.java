@@ -19,4 +19,17 @@ public class MainActivityTest {
         assertEquals(expected,m.Addition(FirstNumber,SecondNumber),12);
 
     }
+
+    @Test
+    public void TestIfTheAdditionIsFalse()
+    {
+        MainActivity m = new MainActivity();
+        float expected = 12;
+        m.SetmValueOne(3);
+        m.SetmValueTwo(6);
+        float FirstNumber = m.GetmValueOne();
+        float SecondNumber = m.GetmValueTwo();
+        m.SetAddition(true);
+        assertNotEquals(expected,m.Addition(FirstNumber,SecondNumber));
+    }
 }
