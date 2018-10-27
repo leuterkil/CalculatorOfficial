@@ -128,6 +128,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //button add
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
+                crunchifyAddition=true;
+                crunchifyEditText.setText(null);
+
+            }
+        });
+
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,7 +148,59 @@ public class MainActivity extends AppCompatActivity {
                     crunchifyEditText.setText(mValueOne * mValueTwo + "");
                     crunchifyMultiplication = false;
                 }
+
+                //For Addition
+                if(crunchifyAddition==true){
+
+                    float result = Addition(mValueOne,mValueTwo);
+                    crunchifyEditText.setText(result + "");
+                    crunchifyAddition=false;
+
+
+                }
             }
         });
+    }
+
+    public Float GetmValueOne()
+    {
+        return mValueOne;
+    }
+
+    public Float GetmValueTwo()
+    {
+        return mValueTwo;
+    }
+
+    public void SetmValueOne(float Number)
+    {
+         mValueOne = Number;
+    }
+
+    public void SetmValueTwo(float Number)
+    {
+        mValueTwo = Number;
+    }
+
+    public Boolean getAddition()
+    {
+        return crunchifyAddition;
+    }
+
+    public EditText getText()
+    {
+        return crunchifyEditText;
+    }
+
+    public void SetAddition(boolean set)
+    {
+        crunchifyAddition = set;
+    }
+
+    public Float Addition(float NumerOne,float SecondNumber)
+    {
+
+        float result = NumerOne+SecondNumber;
+        return  result;
     }
 }
