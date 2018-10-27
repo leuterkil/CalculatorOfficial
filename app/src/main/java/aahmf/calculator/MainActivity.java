@@ -145,7 +145,8 @@ public class MainActivity extends AppCompatActivity {
                 mValueTwo = Float.parseFloat(crunchifyEditText.getText() + "");
 
                 if (crunchifyMultiplication == true) {
-                    crunchifyEditText.setText(mValueOne * mValueTwo + "");
+                    float resultMul = Multiplication(mValueOne,mValueTwo);
+                    crunchifyEditText.setText(resultMul + "");
                     crunchifyMultiplication = false;
                 }
 
@@ -202,5 +203,11 @@ public class MainActivity extends AppCompatActivity {
 
         float result = NumerOne+SecondNumber;
         return  result;
+    }
+
+    public float Multiplication(float NumberOne,float NumberTwo)
+    {
+        float resultMul= NumberOne * NumberTwo;
+        return resultMul;
     }
 }

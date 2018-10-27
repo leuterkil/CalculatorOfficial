@@ -19,4 +19,20 @@ public class MainActivityTest {
         assertEquals(expected,m.Addition(FirstNumber,SecondNumber),12);
 
     }
+
+    @Test
+    public void multiplicationWorks()
+    {
+        MainActivity m = new MainActivity();
+        float expected = 15;
+        m.SetmValueOne(3);
+        m.SetmValueTwo(5);
+        float NumberOne = m.GetmValueOne();
+        float NumberTwo = m.GetmValueTwo();
+        assertEquals(expected,m.Multiplication(NumberOne,NumberTwo),15.0f);
+
+    }
+
+
+
 }
