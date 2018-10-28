@@ -139,6 +139,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //button sub
+        buttonSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
+                mSubtract=true;
+                crunchifyEditText.setText(null);
+
+            }
+        });
+
+
+
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -155,6 +168,15 @@ public class MainActivity extends AppCompatActivity {
                     float result = Addition(mValueOne,mValueTwo);
                     crunchifyEditText.setText(result + "");
                     crunchifyAddition=false;
+
+
+                }
+                //For Substracion
+                if(mSubtract==true){
+
+                    float result = Substract(mValueOne,mValueTwo);
+                    crunchifyEditText.setText(result + "");
+                    mSubtract=false;
 
 
                 }
@@ -196,11 +218,22 @@ public class MainActivity extends AppCompatActivity {
     {
         crunchifyAddition = set;
     }
+    public void SetSub(boolean set)
+    {
+        mSubtract = set;
+    }
 
     public Float Addition(float NumerOne,float SecondNumber)
     {
 
         float result = NumerOne+SecondNumber;
+        return  result;
+    }
+
+    public Float Substract(float NumerOne,float SecondNumber)
+    {
+
+        float result = NumerOne-SecondNumber;
         return  result;
     }
 }
