@@ -260,6 +260,11 @@ public class MainActivity extends AppCompatActivity {
         mSubtract = set;
     }
 
+    public void SetDiv(boolean set)
+    {
+        crunchifyDivision = set;
+    }
+
     public Float Addition(float NumerOne,float SecondNumber)
     {
 

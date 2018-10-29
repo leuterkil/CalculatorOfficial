@@ -79,4 +79,17 @@ public class MainActivityTest {
         assertNotEquals(expected,m.Substract(FirstNumber,SecondNumber));
     }
 
+    @Test
+    public void TestIfTheDivisionIsAccurate()
+    {
+        MainActivity m = new MainActivity();
+        float expected = 9;
+        m.SetmValueOne(36);
+        m.SetmValueTwo(4);
+        float FirstNumber = m.GetmValueOne();
+        float SecondNumber = m.GetmValueTwo();
+        m.SetDiv(true);
+        assertEquals(expected,m.Division(FirstNumber,SecondNumber),9);
+    }
+
 }
