@@ -150,6 +150,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //button divide
+        buttonDivision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
+                crunchifyDivision=true;
+                crunchifyEditText.setText(null);
+
+            }
+        });
+
+        //Clear Button
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                crunchifyEditText.setText("");
+            }
+        });
+
+
+
 
 
         buttonEqual.setOnClickListener(new View.OnClickListener() {
@@ -181,6 +202,21 @@ public class MainActivity extends AppCompatActivity {
 
 
                 }
+                //DivisionalePendejo
+                if (crunchifyDivision == true) {
+                    float dividend;
+                    if (mValueTwo != 0)
+                    {
+                        dividend = Division(mValueOne, mValueTwo);
+                        crunchifyEditText.setText(dividend + "");
+                        crunchifyDivision = false;
+                    }
+                    else
+                        crunchifyEditText.setText("Cant Divide with 0 boi");
+                    crunchifyDivision = false;
+                }
+
+
             }
         });
     }
@@ -243,5 +279,11 @@ public class MainActivity extends AppCompatActivity {
         float result = NumerOne-SecondNumber;
         return  result;
 
+    }
+
+    public Float Division(float NumerOne,float SecondNumber)
+    {
+        float dividend = NumerOne / SecondNumber;
+        return dividend;
     }
 }
